@@ -1,0 +1,72 @@
+html {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #667db6; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#667db6,
+		#0082c8,
+		#0082c8,
+		#667db6
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#667db6,
+		#0082c8,
+		#0082c8,
+		#667db6
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	padding: 25px;
+	border: solid 1px lightgrey;
+	box-shadow: 5px 5px 5px black;
+	background: rgb(239, 240, 235);
+}
+
+#graph {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dot {
+	opacity: 0.6;
+}
+
+.tooltip {
+	background-color: wheat;
+	position: absolute;
+	opacity: 0;
+	color: #191919;
+	font-size: 1rem;
+	padding: 5px;
+	pointer-events: none;
+}
+
+#footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+
+#info,
+#author {
+	font-size: 0.7rem;
+}
+
+a {
+	text-decoration: none;
+}
