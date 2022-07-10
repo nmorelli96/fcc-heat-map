@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function toMonthName(monthNumber) {
       const date = new Date();
       date.setMonth(monthNumber - 1);
-    
+
       return date.toLocaleString('en-US', {
         month: 'long',
       });
@@ -34,15 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const colorScale = {
       "arctic": "#234ea0",
-      "freezing": "#4a74b4",  //  3.25 - 4.74
-      "colder": "#76abd0",  //  4.75 - 6.24
-      "cold": "#abd6e8",  //  6.25 - 7.74
-      "chill": "#dcf1ec", //  7.75 - 8.24
-      "normal": "#faf8c0",  // 8.25 - 8.99
-      "warm": "#fedc90",  //  9 - 9.49
-      "hot": "#fcab64",   //  9.50 - 10.99
-      "hotter": "#f16d43",  //  11.00 - 12.25
-      "burning": "#a50026"  //  12.26 - 13.75
+      "freezing": "#4a74b4",
+      "colder": "#76abd0",
+      "cold": "#abd6e8",
+      "chill": "#dcf1ec",
+      "normal": "#faf8c0",
+      "warm": "#fedc90",
+      "hot": "#fcab64",
+      "hotter": "#f16d43",
+      "burning": "#a50026"
     }
 
     const w = 1000;
@@ -112,13 +112,13 @@ document.addEventListener("DOMContentLoaded", function () {
       .on("mouseover", function (d, i) {
         tooltip
           .html(
-            i.year + " - " + toMonthName(i.month) + "<br>" + 
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + i.temperature.toFixed(2) + "<br>" + 
+            i.year + " - " + toMonthName(i.month) + "<br>" +
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + i.temperature.toFixed(2) + "<br>" +
             "&nbsp;&nbsp;&nbsp;&nbsp;" + i.variance.toFixed(2)
           )
           .attr("data-year", i.year)
-          .style("left", event.pageX + 5 + "px")
-          .style("top", event.pageY - 50 + "px");
+          .style("left", event.pageX + 2 + "px")
+          .style("top", event.pageY - 85 + "px");
         tooltip.style("opacity", 0.9);
         tooltip.attr("id", "tooltip");
         var colorChange = d3.select(this);
@@ -169,55 +169,55 @@ document.addEventListener("DOMContentLoaded", function () {
       .call(yAxis);
 
     svg
-      .append('g')
+      .append("g")
       .attr('id', 'legend')
       .attr('transform', `translate(100, 430)`);
 
     svg
-      .append('g')
+      .append("g")
       .attr('id', 'legend-axis')
       .attr('transform', 'translate(0,455)')
       .call(legendAxis);
 
     svg
       .select('#legend').append('rect').attr('x', 0).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.arctic).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.arctic).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 30).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.freezing).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.freezing).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 60).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.colder).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.colder).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 90).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.cold).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.cold).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 120).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.chill).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.chill).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 150).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.normal).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.normal).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 180).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.warm).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.warm).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 210).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.hot).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.hot).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 240).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.hotter).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.hotter).attr("stroke", "black");
 
     svg
       .select('#legend').append('rect').attr('x', 270).attr('y', 0).attr('width', 30)
-      .style('height', 20).style('opacity', 1).style('fill', colorScale.burning).attr("stroke", "black")
+      .attr('height', 20).style('fill', colorScale.burning).attr("stroke", "black");
 
   };
 });
